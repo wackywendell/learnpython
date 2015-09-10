@@ -1,0 +1,22 @@
+html {
+    overflow-y: hidden;
+}
+
+.rendered_html h1 {
+    margin: 1.08em 0px 20px;
+}
+
+ 
+
+.reveal h1 {
+    font-size: 400%;
+    text-shadow: none;
+}
+
+.reveal h2 {
+    font-size: 250%;
+}
+    
+.reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+    font-size: 150%;
+}
