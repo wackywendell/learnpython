@@ -1,12 +1,15 @@
 html {
+    overflow-y: scroll;
+}
+
+.reveal {
     overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 .rendered_html h1 {
-    margin: 1.08em 0px 20px;
+    margin: 1.08em 0 20px;
 }
-
- 
 
 .reveal h1 {
     font-size: 400%;
