@@ -23,3 +23,17 @@ html {
 .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
     font-size: 150%;
 }
+
+.reveal ol, .reveal ul {
+    font-size: 150%;
+    line-height: 1.4em;
+}
+
+.reveal ol ul {
+    font-size: 75%;
+    line-height: 1.1em;
+}
+
+.reveal li {
+    padding: 0.2em; 
+}
