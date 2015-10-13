@@ -174,7 +174,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">1) Write a function that returns <code>True</code> if a number is divisible by both 3 AND 5.<a class="anchor-link" href="#1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">&#182;</a></h3><p>You may want to remember the remainder operator, <code>%</code>, and that <code>==</code> is a test for equality.</p>
+<h3 id="1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">1) Write a function that returns <code>True</code> if a number is divisible by both 3 AND 5.<a class="anchor-link" href="#1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">&#182;</a></h3><p>You may want to remember the remainder operator, <code>%</code>, that <code>==</code> is a test for equality, and that <code>x and y</code> will check if both <code>x</code> and <code>y</code> are <code>True</code>.</p>
 <h5 id="Example:">Example:<a class="anchor-link" href="#Example:">&#182;</a></h5><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="bp">False</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
@@ -195,7 +195,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1)-Write-a-function-that-returns-the-&quot;norm&quot;-of-an-array.">1) Write a function that returns the "norm" of an array.<a class="anchor-link" href="#1)-Write-a-function-that-returns-the-&quot;norm&quot;-of-an-array.">&#182;</a></h3><p>The "norm" of a vector is equal to the square root of the sum of its components squared. For a vector <code>r = [x, y, z]</code>, for example, the "norm" would be $\left|r\right| = \sqrt{x^2 + y^2 + z^2}$.</p>
+<h3 id="2)-Write-a-function-that-returns-the-&quot;norm&quot;-of-an-array.">2) Write a function that returns the "norm" of an array.<a class="anchor-link" href="#2)-Write-a-function-that-returns-the-&quot;norm&quot;-of-an-array.">&#182;</a></h3><p>The "norm" of a vector is equal to the square root of the sum of its components squared. For a vector <code>r = [x, y, z]</code>, for example, the "norm" would be $\left|r\right| = \sqrt{x^2 + y^2 + z^2}$.</p>
 <p>You may want to look into the functions <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sqrt.html"><code>sqrt</code></a> and <a href="http://docs.scipy.org/doc/numpy/reference/generated/numpy.sum.html"><code>sum</code></a>.</p>
 <h5 id="Example:">Example:<a class="anchor-link" href="#Example:">&#182;</a></h5><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">norm</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -213,7 +213,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="1b)-Write-a-function-that-returns-the-distance-between-two-points.">1b) Write a function that returns the distance between two points.<a class="anchor-link" href="#1b)-Write-a-function-that-returns-the-distance-between-two-points.">&#182;</a></h4><p>Remember that for two vectors $r_2 = \left(x_0, y_0, z_0\right), r_1 = \left(x_1, y_1, z_1\right)$, the distance between them is $d = \sqrt{(x_1 - x_0)^2 + (y_1 - y_0)^2 + (z_1 - z_0)^2}$.</p>
+<h3 id="3)-Write-a-function-that-returns-the-distance-between-two-points.">3) Write a function that returns the distance between two points.<a class="anchor-link" href="#3)-Write-a-function-that-returns-the-distance-between-two-points.">&#182;</a></h3><p>Remember that for two vectors $r_2 = \left(x_0, y_0, z_0\right), r_1 = \left(x_1, y_1, z_1\right)$, the distance between them is $d = \sqrt{(x_1 - x_0)^2 + (y_1 - y_0)^2 + (z_1 - z_0)^2}$.</p>
 <p>Also note that <code>norm(r) = distance(r, [0, 0, 0])</code>, by definition.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
@@ -233,36 +233,8 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="2)-Write-a-function-that-accepts-a-number-as-a-parameter-and-then-returns-that-number-in-base-2.">2) Write a function that accepts a number as a parameter and then returns that number in base 2.<a class="anchor-link" href="#2)-Write-a-function-that-accepts-a-number-as-a-parameter-and-then-returns-that-number-in-base-2.">&#182;</a></h3><p>The result can be a list or a string.</p>
-<h5 id="Example:">Example:<a class="anchor-link" href="#Example:">&#182;</a></h5><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">to_binary</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c"># or &#39;1100100&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">to_binary</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c"># or &#39;1100&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="3)-write-a-function-that-accepts-2-numbers-and-then-returns-the-first-in-the-base-of-the-2nd">3) write a function that accepts 2 numbers and then returns the first in the base of the 2nd<a class="anchor-link" href="#3)-write-a-function-that-accepts-2-numbers-and-then-returns-the-first-in-the-base-of-the-2nd">&#182;</a></h3><h5 id="Examples:">Examples:<a class="anchor-link" href="#Examples:">&#182;</a></h5><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">to_base</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="c"># or &#39;1100100&#39;</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">to_base</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="c"># or &#39;10201&#39;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="4:-Challenge)-Use-the-image-we-loaded-in-class-to-determine-a-distance-calibration-for-a-microscope.">4: Challenge) Use the image we loaded in class to determine a distance calibration for a microscope.<a class="anchor-link" href="#4:-Challenge)-Use-the-image-we-loaded-in-class-to-determine-a-distance-calibration-for-a-microscope.">&#182;</a></h3><p>If I told you that 1 repeat of "black line, white line" was 1 milimeter, can you determine the distance in milimeters that corresponds to each pixel?  What is the resolution in these imaging conditions?</p>
+<p>See</p>
 
 </div>
 </div>
