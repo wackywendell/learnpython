@@ -20,3 +20,9 @@
 Suggestions I'm not sure we can use:
  * R course
  * Split people to different stages
+
+## Second Lecture
+
+### Thoughts from Wendell
+ * We could have been more prepared to talk about `return` vs. `print`.
+ 
