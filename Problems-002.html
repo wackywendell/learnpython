@@ -174,7 +174,15 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">1) Write a function that returns <code>True</code> if a number is divisible by both 3 AND 5.<a class="anchor-link" href="#1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">&#182;</a></h3><p>You may want to remember the remainder operator, <code>%</code>, that <code>==</code> is a test for equality, and that <code>x and y</code> will check if both <code>x</code> and <code>y</code> are <code>True</code>:</p>
+<h3 id="1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">1) Write a function that returns <code>True</code> if a number is divisible by both 3 AND 5.<a class="anchor-link" href="#1)-Write-a-function-that-returns-True-if-a-number-is-divisible-by-both-3-AND-5.">&#182;</a></h3><p>You may want to remember the remainder operator, <code>%</code>, that <code>==</code> is a test for equality, and that <code>x and y</code> will check if both <code>x</code> and <code>y</code> are <code>True</code>.</p>
+<p>The remainder operator (or "modulo" operator) gives the <em>remainder</em> after division:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">//</span> <span class="mi">3</span>  <span class="c"># integer division</span>
+<span class="mi">1</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">%</span> <span class="mi">3</span>
+<span class="mi">2</span>
+</pre></div>
+<p>This works because 5 is divisible by 3 once, with 2 left over. For more information, there's a <a href="https://en.wikipedia.org/wiki/Modulo_operation">Wikipedia article</a>.</p>
+<p>Here is an example of using <code>==</code>:</p>
 <div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">x</span> <span class="o">==</span> <span class="n">y</span>
@@ -191,7 +199,7 @@ div#notebook {
 <span class="o">&gt;&gt;&gt;</span> <span class="n">are_xy_equal</span> <span class="ow">and</span> <span class="n">are_xz_equal</span>
 <span class="bp">False</span>
 </pre></div>
-<p>Use this to help you write the above function.</p>
+<p>Note that <code>are_xy_equal</code> and <code>are_xz_equal</code> are not functions; they are simply variables.</p>
 <h5 id="Example-output:">Example output:<a class="anchor-link" href="#Example-output:">&#182;</a></h5><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="bp">False</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">is_divisible</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
