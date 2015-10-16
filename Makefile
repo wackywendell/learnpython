@@ -22,8 +22,8 @@ ghp: all
 	ghp-import -p pages
 
 images:
-	cp -ru imgs pages/imgs
-	cp -ru data pages/data
+	cp -ru imgs pages/
+	cp -ru data pages/
 
 # Generic rule: executes the notebook, and produces an HTML.
 pages/%.html: %.ipynb
