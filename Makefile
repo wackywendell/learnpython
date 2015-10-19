@@ -41,6 +41,11 @@ pages/001-Intro.html: 001-Intro.ipynb
 pages/002-Basic_Python.html: 002-Basic_Python.ipynb
 		jupyter nbconvert --to html $< --execute --allow-errors
 		mv $(addsuffix .html,$(basename $(notdir $<))) $@
+		
+# This notebook has errors on purpose, so we allow that.
+pages/003-Control_Structures.html: 003-Control_Structures.ipynb
+		jupyter nbconvert --to html $< --execute --allow-errors
+		mv $(addsuffix .html,$(basename $(notdir $<))) $@
 
 # This notebook we want represented exactly as done in class, without execution.
 pages/002-Basic_Python_actual.html: 002-Basic_Python_actual.ipynb
