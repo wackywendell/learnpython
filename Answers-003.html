@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>000-Syllabus</title>
+<title>Answers-003</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -174,8 +174,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Learn-to-Code:-Zero-to-Sixty-Data-Analysis">Learn to Code: Zero to Sixty Data Analysis<a class="anchor-link" href="#Learn-to-Code:-Zero-to-Sixty-Data-Analysis">&#182;</a></h1><h3 id="A-Workshop-Series-for-Women"><em>A Workshop Series for Women</em><a class="anchor-link" href="#A-Workshop-Series-for-Women">&#182;</a></h3><p>Have you ever wanted to learn to program but didn’t know where to start? Or are you interested in learning more about data visualization or data science? If so, this course is for you! We'll start with the very basics: the first day we'll install Python together, and go from there!</p>
-
+<h2 id="Answers">Answers<a class="anchor-link" href="#Answers">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -184,115 +183,189 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Important-Facts:-the-short-version">Important Facts: <em>the short version</em><a class="anchor-link" href="#Important-Facts:-the-short-version">&#182;</a></h4><ul>
-<li><em>Goal</em>: Learn to code, with data!</li>
-<li><em>Time</em>: <strong>Mondays</strong> at <strong>7 PM</strong>, from Oct. 5 to Nov. 9</li>
-<li><em>Extra</em>: Open Sessions will be <strong>Thursdays</strong> at <strong>7 PM</strong>.</li>
-<li><em>Mail</em>: Sign up to our <a href="https://groups.google.com/a/elilists.yale.edu/forum/#!forum/learntocode">mailing list</a> for more information.</li>
-<li><em>Location</em>: <strong>17 Hillhouse, room 113</strong> on Mondays and <strong>17 Hillhouse, room 05</strong> on Thursdays.</li>
-<li><em>Tools</em>: Bring a laptop computer!</li>
-</ul>
+<h3 id="3a)">3a)<a class="anchor-link" href="#3a)">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">get_factors</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s">&quot;Returns all the factors of a number.&quot;</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">factors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">factors</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="n">get_factors</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
 
 </div>
 </div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7 : [1, 7]
+12 : [1, 2, 3, 4, 6, 12]
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Syllabus">Syllabus<a class="anchor-link" href="#Syllabus">&#182;</a></h1>
+<h4 id="3b)">3b)<a class="anchor-link" href="#3b)">&#182;</a></h4>
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">def</span> <span class="nf">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s">&quot;Tests if a number is prime.&quot;</span>
+    <span class="n">factors</span> <span class="o">=</span> <span class="n">get_factors</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">factors</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span>
+
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7 : True
+12 : False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="c"># Another version</span>
+<span class="k">def</span> <span class="nf">is_prime2</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="s">&quot;Tests if a number is prime.&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">n</span> <span class="o">//</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">return</span> <span class="k">False</span>
+    <span class="k">return</span> <span class="k">True</span>
+
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">12</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="s">&#39;:&#39;</span><span class="p">,</span> <span class="n">is_prime2</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>7 : True
+12 : False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goals">Goals<a class="anchor-link" href="#Goals">&#182;</a></h2><p>We want participants to be able to:</p>
-<ul>
-<li>Learn the basics of programming</li>
-<li>Learn to import, manipulate, and plot data</li>
-</ul>
-<h4 id="Audience">Audience<a class="anchor-link" href="#Audience">&#182;</a></h4><p>This series is aimed primarily at women with little to no coding experience who wish to be able to work with scientific data or become a data scientist, although it is open to all Yale affiliates.</p>
-
+<h4 id="3c)">3c)<a class="anchor-link" href="#3c)">&#182;</a></h4>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tools">Tools<a class="anchor-link" href="#Tools">&#182;</a></h3><p>The first workshop will focus primarily on installing and introducing these tools, so you do not need to do this on your own.</p>
-<p>We will use the <a href="http://python.org">Python 3</a> programming language, and the <a href="http://www.scipy.org/about.html">SciPy stack</a>. Participants will be expected to bring a computer of their own to work with.</p>
-<p>These tools can most easily be installed through <a href="http://continuum.io/downloads#34">Anaconda</a>; be sure to select "I want Python 3.4"!</p>
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">is_prime</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2
+3
+5
+7
+11
+13
+17
+19
+23
+29
+31
+37
+41
+43
+47
+53
+59
+61
+67
+71
+73
+79
+83
+89
+97
+</pre>
 </div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Schedule">Schedule<a class="anchor-link" href="#Schedule">&#182;</a></h2><p>The series will run from Oct. 5 to Nov. 9, with a possible extension depending on interest, demand, and progress.</p>
+</div>
 
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Workshops">Workshops<a class="anchor-link" href="#Workshops">&#182;</a></h3><p>The main workshop series will be a weekly combination of mini-lectures and interactive activities, where participants will practice coding themselves. Discussing, working together, and asking questions will be strongly encouraged. At the end of the workshop, students will also be given a set of practice problems to keep working on, eiter on their own time, with each other, or at the Open Sessions.</p>
-<p>Workshops will be held <strong>Mondays from 7–9 PM</strong> in <strong>17 Hillhouse</strong>, room <strong>113</strong>.</p>
-<p><strong><em>Please bring a laptop to all sessions.</em></strong></p>
-<h4 id="Sessions-(subject-to-revision)">Sessions (<em>subject to revision</em>)<a class="anchor-link" href="#Sessions-(subject-to-revision)">&#182;</a></h4><ul>
-<li><em>Oct. 05:</em> <strong><a href="001-Intro.html">Installation and Introduction</a></strong>: What is Python? Why are we using it? How do I use it?<ul>
-<li><a href="Problems-001.html">Practice Problems</a></li>
-</ul>
-</li>
-<li><em>Oct. 12:</em> <strong><a href="002-Basic_Python.html">Basic Python</a></strong>: Expressions, lists, functions, and basic plotting<ul>
-<li><a href="data/sizeCalibration.txt">Data file</a></li>
-<li><a href="Problems-002.html">Practice Problems</a></li>
-<li>The <a href="002-Basic_Python_actual.html">notebook created during class</a></li>
-</ul>
-</li>
-<li><em>Oct. 19:</em> <strong><a href="003-Control_Structures.html">Control Structures</a></strong>: For loops, if statements, and even more plotting<ul>
-<li><a href="Problems-003.html">Practice Problems</a></li>
-</ul>
-</li>
-<li><em>Oct. 26:</em> Objects, arrays, and advanced plotting features</li>
-<li><em>Nov. 02:</em> Modules, good coding practices, and a more detailed look at the scipy stack</li>
-<li><em>Nov. 09:</em> Writing your own module: extending the scipy stack</li>
-</ul>
 
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Open-Sessions">Open Sessions<a class="anchor-link" href="#Open-Sessions">&#182;</a></h3><p>On Thursdays an Open Session will be offered. This will be a chance for people to work together on coding and/or plotting challenges, either related to the Workshops or not. Instructors and/or helpers will be present to facilitate group work, answer questions, help debug, or just talk.</p>
-<p>Open Sessions will be held <strong>Thursdays from 7–9 PM</strong> in <strong>17 Hillhouse</strong>, room <strong>05</strong>.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Planning-Meeting">Planning Meeting<a class="anchor-link" href="#Planning-Meeting">&#182;</a></h3><p>There will be a planning meeting for all those interested in helping out on Thursday, Oct. 1 in the 17 Hillhouse common area by the entrance at 7 PM. Please feel free to come by and help us plan!</p>
-
-</div>
-</div>
 </div>
     </div>
   </div>

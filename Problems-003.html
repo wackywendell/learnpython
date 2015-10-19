@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>000-Syllabus</title>
+<title>Problems-003</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -174,7 +174,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Learn-to-Code:-Zero-to-Sixty-Data-Analysis">Learn to Code: Zero to Sixty Data Analysis<a class="anchor-link" href="#Learn-to-Code:-Zero-to-Sixty-Data-Analysis">&#182;</a></h1><h3 id="A-Workshop-Series-for-Women"><em>A Workshop Series for Women</em><a class="anchor-link" href="#A-Workshop-Series-for-Women">&#182;</a></h3><p>Have you ever wanted to learn to program but didn’t know where to start? Or are you interested in learning more about data visualization or data science? If so, this course is for you! We'll start with the very basics: the first day we'll install Python together, and go from there!</p>
+<h3 id="1)-Extending-the-Heaviside-function-to-arrays">1) Extending the Heaviside function to arrays<a class="anchor-link" href="#1)-Extending-the-Heaviside-function-to-arrays">&#182;</a></h3><p>In class we defined the Heavside function in python as <code>step(x)</code>. Unfortunaley it does not work on arrays yet, meaning if the input <code>x</code> is an array python will return an error. Use your method of choice (smart indexing or for loops) to redefine <code>step(x)</code> as <code>better_step(x)</code> such that it will work on arrays too. You may use your own definition of <code>step(x)</code> or you can use the one provided below.</p>
 
 </div>
 </div>
@@ -184,14 +184,19 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="Important-Facts:-the-short-version">Important Facts: <em>the short version</em><a class="anchor-link" href="#Important-Facts:-the-short-version">&#182;</a></h4><ul>
-<li><em>Goal</em>: Learn to code, with data!</li>
-<li><em>Time</em>: <strong>Mondays</strong> at <strong>7 PM</strong>, from Oct. 5 to Nov. 9</li>
-<li><em>Extra</em>: Open Sessions will be <strong>Thursdays</strong> at <strong>7 PM</strong>.</li>
-<li><em>Mail</em>: Sign up to our <a href="https://groups.google.com/a/elilists.yale.edu/forum/#!forum/learntocode">mailing list</a> for more information.</li>
-<li><em>Location</em>: <strong>17 Hillhouse, room 113</strong> on Mondays and <strong>17 Hillhouse, room 05</strong> on Thursdays.</li>
-<li><em>Tools</em>: Bring a laptop computer!</li>
-</ul>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">step</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="s">&quot;This is the Heaviside step function. It returns 0 for x values below 0, 1/2 for x = 0, and 1 for x &gt; 0.&quot;</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">0</span>
+    <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mf">0.5</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="mi">1</span>
+</pre></div>
+<h5 id="Check-your-function-by-plotting-the-output-in-the-range-from--1-to-+1:">Check your function by plotting the output in the range from -1 to +1:<a class="anchor-link" href="#Check-your-function-by-plotting-the-output-in-the-range-from--1-to-+1:">&#182;</a></h5><div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">num</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">better_step</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
 
 </div>
 </div>
@@ -201,21 +206,14 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Syllabus">Syllabus<a class="anchor-link" href="#Syllabus">&#182;</a></h1>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Goals">Goals<a class="anchor-link" href="#Goals">&#182;</a></h2><p>We want participants to be able to:</p>
-<ul>
-<li>Learn the basics of programming</li>
-<li>Learn to import, manipulate, and plot data</li>
-</ul>
-<h4 id="Audience">Audience<a class="anchor-link" href="#Audience">&#182;</a></h4><p>This series is aimed primarily at women with little to no coding experience who wish to be able to work with scientific data or become a data scientist, although it is open to all Yale affiliates.</p>
+<h3 id="2)-Shopping-list-for-pumpkin-pie">2) Shopping list for pumpkin pie<a class="anchor-link" href="#2)-Shopping-list-for-pumpkin-pie">&#182;</a></h3><p>It is fall season - time to bake a pumkin pie! Because I don't really remember what goes into a pumpkin pie, I looked up a <a href="https://urldefense.proofpoint.com/v2/url?u=http-3A__allrecipes.com_recipe_23439_perfect-2Dpumpkin-2Dpie_&d=AwICAg&c=-dg2m7zWuuDZ0MUcV7Sdqw&r=k7fXNW4lSZrEhgTU5f4Y0v35SE8Q4riiMd9xs-2HhnY&m=n104r367VBOQj0xmLV62LTqwaqNiInTn30PcwQKy6uk&s=rSnmkxuuIwHCLKqsyN5OAIE-80YcaaxEBTbNKLqAKTM&e=">recipe</a>. We can keep the needed ingredients in a pyhton list of strings.</p>
+<div class="highlight"><pre><span class="n">ingredients</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;pumpkin&quot;</span><span class="p">,</span><span class="s">&quot;sweetened condensed milk&quot;</span><span class="p">,</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span><span class="s">&quot;cinnamon&quot;</span><span class="p">,</span><span class="s">&quot;ginger&quot;</span><span class="p">,</span><span class="s">&quot;nutmeg&quot;</span><span class="p">,</span><span class="s">&quot;salt&quot;</span><span class="p">,</span><span class="s">&quot;pie crust&quot;</span><span class="p">]</span>
+</pre></div>
+<p>It turns out I have a bunch of stuff in <code>stock</code>, but not all of it can be used for making my pie.</p>
+<div class="highlight"><pre><span class="n">stock</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;chair&quot;</span><span class="p">,</span><span class="s">&quot;salt&quot;</span><span class="p">,</span><span class="s">&quot;milk&quot;</span><span class="p">,</span><span class="s">&quot;eggs&quot;</span><span class="p">,</span><span class="s">&quot;flour&quot;</span><span class="p">,</span><span class="s">&quot;lemon juice&quot;</span><span class="p">,</span><span class="s">&quot;frozen fish&quot;</span><span class="p">,</span><span class="s">&quot;apples&quot;</span><span class="p">,</span><span class="s">&quot;sugar&quot;</span><span class="p">,</span><span class="s">&quot;dish washing soap&quot;</span><span class="p">,</span><span class="s">&quot;sweetened condensed milk&quot;</span><span class="p">,</span><span class="s">&quot;ginger&quot;</span><span class="p">,</span><span class="s">&quot;garlic&quot;</span><span class="p">,</span><span class="s">&quot;pumpkin&quot;</span><span class="p">,</span><span class="s">&quot;potatoes&quot;</span><span class="p">]</span>
+</pre></div>
+<h4 id="2a)-What-do-I-need-to-buy?">2a) What do I need to buy?<a class="anchor-link" href="#2a)-What-do-I-need-to-buy?">&#182;</a></h4><p>Write a function <code>shoppinglist(ingredients,stock)</code> that will return a list with all the items that I need for the pie but I don't have in <code>stock</code>.</p>
+<h4 id="2b)-What's-left-in-stock?">2b) What's left in stock?<a class="anchor-link" href="#2b)-What's-left-in-stock?">&#182;</a></h4><p>Write a function <code>update_stock</code> that removes all items from stock that I will be using for the pie. The function should return an updated <code>stock</code> list. Assume that an item gets used up entirely when I bake my pie.</p>
 
 </div>
 </div>
@@ -225,9 +223,19 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Tools">Tools<a class="anchor-link" href="#Tools">&#182;</a></h3><p>The first workshop will focus primarily on installing and introducing these tools, so you do not need to do this on your own.</p>
-<p>We will use the <a href="http://python.org">Python 3</a> programming language, and the <a href="http://www.scipy.org/about.html">SciPy stack</a>. Participants will be expected to bring a computer of their own to work with.</p>
-<p>These tools can most easily be installed through <a href="http://continuum.io/downloads#34">Anaconda</a>; be sure to select "I want Python 3.4"!</p>
+<h3 id="3)-Finding-Prime-numbers">3) Finding Prime numbers<a class="anchor-link" href="#3)-Finding-Prime-numbers">&#182;</a></h3><h4 id="3a)-Write-a-program-that-finds-all-the-factors-of-a-number.">3a) Write a program that finds all the factors of a number.<a class="anchor-link" href="#3a)-Write-a-program-that-finds-all-the-factors-of-a-number.">&#182;</a></h4><p>Your function should return a list of all the numbers less than $n$ that $n$ is divisible by.</p>
+<h5 id="Example-output:">Example output:<a class="anchor-link" href="#Example-output:">&#182;</a></h5><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">get_factors</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">get_factors</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+</pre></div>
+<h5 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">&#182;</a></h5><p>You can use <code>for i in range(n, m+1):</code> to loop over all numbers between <code>n</code> and <code>m</code> inclusively.</p>
+<p>To check if <code>x</code> is divisible by <code>y</code>, you can use the <a href="https://urldefense.proofpoint.com/v2/url?u=https-3A__en.wikipedia.org_wiki_Modulo-5Foperation&d=AwIGaQ&c=-dg2m7zWuuDZ0MUcV7Sdqw&r=RIqg6vJ5D0Lat9AOeov1jmQMAePXaMOifaIeBhvrRlY&m=zNpGYtDMWepq1j92728TD6ilikxNimHGlFG4q25WGCs&s=xjp_G4N1Aq1MNqpAhNosCsxIl8yYDeAuVAIwPf8mIrw&e=">modulo</a> (or remainder) operator:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="mi">12</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">12</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span>
+<span class="bp">False</span>
+</pre></div>
 
 </div>
 </div>
@@ -237,7 +245,13 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Schedule">Schedule<a class="anchor-link" href="#Schedule">&#182;</a></h2><p>The series will run from Oct. 5 to Nov. 9, with a possible extension depending on interest, demand, and progress.</p>
+<h4 id="3b)-Write-a-function-that-tests-if-a-number-is-prime.">3b) Write a function that tests if a number is prime.<a class="anchor-link" href="#3b)-Write-a-function-that-tests-if-a-number-is-prime.">&#182;</a></h4><p>Remember that a number is <em>prime</em> if its only two factors are 1 and itself.</p>
+<h5 id="Example-output:">Example output:<a class="anchor-link" href="#Example-output:">&#182;</a></h5><div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+<span class="bp">True</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">is_prime</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="bp">False</span>
+</pre></div>
+<h5 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">&#182;</a></h5><p>You can use the <code>get_factors</code> function we defined above!</p>
 
 </div>
 </div>
@@ -247,28 +261,16 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Workshops">Workshops<a class="anchor-link" href="#Workshops">&#182;</a></h3><p>The main workshop series will be a weekly combination of mini-lectures and interactive activities, where participants will practice coding themselves. Discussing, working together, and asking questions will be strongly encouraged. At the end of the workshop, students will also be given a set of practice problems to keep working on, eiter on their own time, with each other, or at the Open Sessions.</p>
-<p>Workshops will be held <strong>Mondays from 7–9 PM</strong> in <strong>17 Hillhouse</strong>, room <strong>113</strong>.</p>
-<p><strong><em>Please bring a laptop to all sessions.</em></strong></p>
-<h4 id="Sessions-(subject-to-revision)">Sessions (<em>subject to revision</em>)<a class="anchor-link" href="#Sessions-(subject-to-revision)">&#182;</a></h4><ul>
-<li><em>Oct. 05:</em> <strong><a href="001-Intro.html">Installation and Introduction</a></strong>: What is Python? Why are we using it? How do I use it?<ul>
-<li><a href="Problems-001.html">Practice Problems</a></li>
-</ul>
-</li>
-<li><em>Oct. 12:</em> <strong><a href="002-Basic_Python.html">Basic Python</a></strong>: Expressions, lists, functions, and basic plotting<ul>
-<li><a href="data/sizeCalibration.txt">Data file</a></li>
-<li><a href="Problems-002.html">Practice Problems</a></li>
-<li>The <a href="002-Basic_Python_actual.html">notebook created during class</a></li>
-</ul>
-</li>
-<li><em>Oct. 19:</em> <strong><a href="003-Control_Structures.html">Control Structures</a></strong>: For loops, if statements, and even more plotting<ul>
-<li><a href="Problems-003.html">Practice Problems</a></li>
-</ul>
-</li>
-<li><em>Oct. 26:</em> Objects, arrays, and advanced plotting features</li>
-<li><em>Nov. 02:</em> Modules, good coding practices, and a more detailed look at the scipy stack</li>
-<li><em>Nov. 09:</em> Writing your own module: extending the scipy stack</li>
-</ul>
+<h4 id="3c)-Print-all-the-prime-numbers-less-than-100.">3c) Print all the prime numbers less than 100.<a class="anchor-link" href="#3c)-Print-all-the-prime-numbers-less-than-100.">&#182;</a></h4><h5 id="Example-output:">Example output:<a class="anchor-link" href="#Example-output:">&#182;</a></h5>
+<pre><code>2
+3
+5
+7
+11
+13
+17
+19
+...</code></pre>
 
 </div>
 </div>
@@ -278,9 +280,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Open-Sessions">Open Sessions<a class="anchor-link" href="#Open-Sessions">&#182;</a></h3><p>On Thursdays an Open Session will be offered. This will be a chance for people to work together on coding and/or plotting challenges, either related to the Workshops or not. Instructors and/or helpers will be present to facilitate group work, answer questions, help debug, or just talk.</p>
-<p>Open Sessions will be held <strong>Thursdays from 7–9 PM</strong> in <strong>17 Hillhouse</strong>, room <strong>05</strong>.</p>
-
+<h3 id="4)-Smiley-competition">4) Smiley competition<a class="anchor-link" href="#4)-Smiley-competition">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -289,7 +289,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Planning-Meeting">Planning Meeting<a class="anchor-link" href="#Planning-Meeting">&#182;</a></h3><p>There will be a planning meeting for all those interested in helping out on Thursday, Oct. 1 in the 17 Hillhouse common area by the entrance at 7 PM. Please feel free to come by and help us plan!</p>
+<p><em>Coming soon!</em></p>
 
 </div>
 </div>
