@@ -234,7 +234,7 @@ div#notebook {
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.image.AxesImage at 0x7fd46fd37c18&gt;</pre>
+<pre>&lt;matplotlib.image.AxesImage at 0x7fa783a5cba8&gt;</pre>
 </div>
 
 </div>
@@ -8026,9 +8026,16 @@ You can load the image as an array of pixel values by the following command:</p>
 </pre></div>
 <p>Where <code>x</code> is the array that you would like to turn into an image and <code>cmap=cm.gray</code> tells the <code>imshow</code> function to interpret the image as a gray scale image. If you leave out the second argument, <code>imshow</code> will plot the image on a scale from <strong>red</strong> to <strong>blue</strong> instead of <strong>white</strong> to <strong>black</strong>. Try it out!</p>
 <p>You job is to solve the puzzle by turning the 300 by 1200 image <code>"puzzle.png"</code> into a 600 by 600 image <code>"solution.png"</code>such that the poor chopped up animal is whole again.</p>
-<h5 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">&#182;</a></h5><p>You need to define at least one new array for the solution image (you can use more helper arrays if you want). You can use the function <code>np.full()</code> to create an array <code>y</code> of shape <code>(600,600)</code> which is filled with any value, e.g. <code>0</code>.</p>
+<h4 id="Hints:">Hints:<a class="anchor-link" href="#Hints:">&#182;</a></h4><p>You need to define at least one new array for the solution image (you can use more helper arrays if you want). You can use the function <code>np.full()</code> to create an array <code>y</code> of shape <code>(600,600)</code> which is filled with any value, e.g. <code>0</code>.</p>
 <p>Once you solved the puzzle you can save your array <code>y</code> as an image with the name <code>"solution.png"</code> with the following command:</p>
 <div class="highlight"><pre><span class="n">imsave</span><span class="p">(</span><span class="s">&quot;solution.png&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">cm</span><span class="o">.</span><span class="n">gray</span><span class="p">)</span>
+</pre></div>
+<h5 id="Hint-2:">Hint 2:<a class="anchor-link" href="#Hint-2:">&#182;</a></h5><p>You can also assign to pieces of arrays:</p>
+<div class="highlight"><pre><span class="o">&gt;&gt;&gt;</span> <span class="n">big_array</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">piece</span> <span class="o">=</span> <span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">])</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">big_array</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="n">piece</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="k">print</span><span class="p">(</span><span class="n">big_array</span><span class="p">)</span>
+<span class="p">[</span><span class="mi">100</span> <span class="mi">200</span>   <span class="mi">3</span>   <span class="mi">4</span>   <span class="mi">5</span>   <span class="mi">6</span>   <span class="mi">7</span>   <span class="mi">8</span>   <span class="mi">9</span>  <span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
 </div>
