@@ -53,8 +53,12 @@ pages/002-Basic_Python_actual.html: 002-Basic_Python_actual.ipynb
 		jupyter nbconvert --to html $<
 		mv $(addsuffix .html,$(basename $(notdir $<))) $@
 
-pages/index.html: index.html
-	cp index.html pages/
+pages/000-Syllabus.html: syllabus-redirect.html
+	cp syllabus-redirect.html pages/000-Syllabus.html
+	
+pages/index.html: 000-Syllabus.ipynb
+	jupyter nbconvert --to html $< --execute
+	mv $(addsuffix .html,$(basename $(notdir $<))) $@
 
 pages/custom.css: custom.css
 	cp custom.css pages/
