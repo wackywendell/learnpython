@@ -12,6 +12,7 @@ all: pages/index.html \
 	pages/002-Basic_Python_actual.html \
 	pages/003-Control_Structures.html \
 	pages/custom.css \
+	pages/CNAME \
 	images
 
 clean:
@@ -57,3 +58,6 @@ pages/index.html: index.html
 
 pages/custom.css: custom.css
 	cp custom.css pages/
+
+pages/CNAME: CNAME
+	cp CNAME pages/
