@@ -199,6 +199,63 @@ div#notebook {
 </div>
 </div>
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="3)-Trip-Data-Analysis">3) Trip Data Analysis<a class="anchor-link" href="#3)-Trip-Data-Analysis">&#182;</a></h2><p>In this problem we want to take a closer look at the trip distance data. Load the taxidata set as <code>data</code>. The taxidata table comes with information about pickup/dropoff locations as long/lat pairs as well as the trip distance logged by the taxi.</p>
+<p>We want to compare the distance logged by the taxi in <code>data.trip_distance</code> to two different ways of computing distances from the pickup/dropoff location.</p>
+<ul>
+<li>The first way of computing a distance is simply by drawing a straight line between the dropoff and pickup locations. This distance is approximately the euclidean distance between the two points, neglecting the curvature of the earth. you can compute the euclidean distance between two long/lat pairs by using the following function:</li>
+</ul>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">euclidean_dist</span><span class="p">(</span><span class="n">long0</span><span class="p">,</span><span class="n">long1</span><span class="p">,</span><span class="n">lat0</span><span class="p">,</span><span class="n">lat1</span> <span class="p">,</span><span class="n">unit</span> <span class="o">=</span> <span class="s">&#39;miles&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;approximate the euclidean (direct) distance between two lat/long pairs in miles or km&#39;&#39;&#39;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">long1</span><span class="o">-</span><span class="n">long0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lat1</span><span class="o">-</span><span class="n">lat0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s">&#39;km&#39;</span><span class="p">:</span>
+        <span class="c">#there are approximately 111km between points on the surface of the earth if they are separated by 1 degree</span>
+        <span class="n">d</span> <span class="o">*=</span> <span class="mf">111.</span>
+    <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s">&#39;miles&#39;</span><span class="p">:</span>
+        <span class="c">#there are 0.621371 miles per km</span>
+        <span class="n">d</span> <span class="o">*=</span> <span class="mf">111.</span><span class="o">*</span><span class="mf">0.621371</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;function can only use &#39;km&#39; or &#39;miles&#39; as units&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+<ul>
+<li>Another way of computing a distance is by using the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> between the dropoff and pickup locations. This distance is just the sum of the absolut values of horizontal and vertical differences between the two points. You can compute the manhattan distance between two long/lat pairs by using the following function:</li>
+</ul>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">manhattan_dist</span><span class="p">(</span><span class="n">long0</span><span class="p">,</span><span class="n">long1</span><span class="p">,</span><span class="n">lat0</span><span class="p">,</span><span class="n">lat1</span> <span class="p">,</span><span class="n">unit</span> <span class="o">=</span> <span class="s">&#39;miles&#39;</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;approximate the manhattan distance between two lat/long pairs in miles or km&#39;&#39;&#39;</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">long1</span><span class="o">-</span><span class="n">long0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lat1</span><span class="o">-</span><span class="n">lat0</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s">&#39;km&#39;</span><span class="p">:</span>
+        <span class="c">#there are approximately 111km between points on the surface of the earth if they are separated by 1 degree</span>
+        <span class="n">d</span> <span class="o">*=</span> <span class="mf">111.</span>
+    <span class="k">elif</span> <span class="n">unit</span> <span class="o">==</span> <span class="s">&#39;miles&#39;</span><span class="p">:</span>
+        <span class="c">#there are 0.621371 miles per km</span>
+        <span class="n">d</span> <span class="o">*=</span> <span class="mf">111.</span><span class="o">*</span><span class="mf">0.621371</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s">&quot;function can only use &#39;km&#39; or &#39;miles&#39; as units&quot;</span><span class="p">)</span>
+        <span class="k">return</span>
+
+    <span class="k">return</span> <span class="n">d</span>
+</pre></div>
+<p>1) Create the columns <code>data.euclid_dist</code> and <code>data.manhattan_dist</code> by applying the above defined functions to your dropoff/pickup data</p>
+<p>2) Histogram all three distance columns <code>data.trip_distance, data.euclid_dist, data.manhattan_dist</code>. Choose appropriate bins like in class (exclude trips over 100 miles or a distance of your liking). Can you tell a difference between the three distributions? What are there mean and median distances?</p>
+<p>3) Let's compare the two distance functions to the taxi-logged distance.</p>
+<ul>
+<li><p>Focus on only very short trips (less than 3 miles). Which way of computing the distance between the two lat/long pairs is closest to the taxi-logged distance?</p>
+</li>
+<li><p>Focus on only large trips (more than than 20 miles). Which way of computing the distance between the two lat/long pairs is closest to the taxi-logged distance?</p>
+</li>
+</ul>
+<p>Can you explain your findings from above?</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
