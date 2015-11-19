@@ -211,7 +211,11 @@ div#notebook {
 </ul>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">euclidean_dist</span><span class="p">(</span><span class="n">long0</span><span class="p">,</span><span class="n">long1</span><span class="p">,</span><span class="n">lat0</span><span class="p">,</span><span class="n">lat1</span> <span class="p">,</span><span class="n">unit</span> <span class="o">=</span> <span class="s">&#39;miles&#39;</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;approximate the euclidean (direct) distance between two lat/long pairs in miles or km&#39;&#39;&#39;</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">long1</span><span class="o">-</span><span class="n">long0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lat1</span><span class="o">-</span><span class="n">lat0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="c">#scale longitudes by cosine of mean latitudes</span>
+    <span class="n">s_long0</span> <span class="o">=</span> <span class="n">long0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">lat0</span><span class="o">+</span><span class="n">lat1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="mf">180.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">s_long1</span> <span class="o">=</span> <span class="n">long1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">lat0</span><span class="o">+</span><span class="n">lat1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="mf">180.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="c">#angular distance between points on surface of earth</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">((</span><span class="n">s_long1</span><span class="o">-</span><span class="n">s_long0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="p">(</span><span class="n">lat1</span><span class="o">-</span><span class="n">lat0</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s">&#39;km&#39;</span><span class="p">:</span>
         <span class="c">#there are approximately 111km between points on the surface of the earth if they are separated by 1 degree</span>
         <span class="n">d</span> <span class="o">*=</span> <span class="mf">111.</span>
@@ -225,11 +229,15 @@ div#notebook {
     <span class="k">return</span> <span class="n">d</span>
 </pre></div>
 <ul>
-<li>Another way of computing a distance is by using the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">manhattan distance</a> between the dropoff and pickup locations. This distance is just the sum of the absolut values of horizontal and vertical differences between the two points. You can compute the manhattan distance between two long/lat pairs by using the following function:</li>
+<li>Another way of computing a distance is by using the <a href="https://en.wikipedia.org/wiki/Taxicab_geometry">Manhattan distance</a> between the dropoff and pickup locations. This distance is just the sum of the absolute values of horizontal and vertical differences between the two points. You can compute the Manhattan distance between two long/lat pairs by using the following function:</li>
 </ul>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">manhattan_dist</span><span class="p">(</span><span class="n">long0</span><span class="p">,</span><span class="n">long1</span><span class="p">,</span><span class="n">lat0</span><span class="p">,</span><span class="n">lat1</span> <span class="p">,</span><span class="n">unit</span> <span class="o">=</span> <span class="s">&#39;miles&#39;</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;approximate the manhattan distance between two lat/long pairs in miles or km&#39;&#39;&#39;</span>
-    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">long1</span><span class="o">-</span><span class="n">long0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lat1</span><span class="o">-</span><span class="n">lat0</span><span class="p">)</span>
+    <span class="sd">&#39;&#39;&#39;approximate the Manhattan distance between two lat/long pairs in miles or km&#39;&#39;&#39;</span>
+    <span class="c">#scale longitudes by cosine of mean latitudes</span>
+    <span class="n">s_long0</span> <span class="o">=</span> <span class="n">long0</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">lat0</span><span class="o">+</span><span class="n">lat1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="mf">180.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="n">s_long1</span> <span class="o">=</span> <span class="n">long1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="n">lat0</span><span class="o">+</span><span class="n">lat1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span><span class="o">/</span><span class="mf">180.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+    <span class="c">#angular distance between points on surface of earth</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">s_long1</span><span class="o">-</span><span class="n">s_long0</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">lat1</span><span class="o">-</span><span class="n">lat0</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">unit</span> <span class="o">==</span> <span class="s">&#39;km&#39;</span><span class="p">:</span>
         <span class="c">#there are approximately 111km between points on the surface of the earth if they are separated by 1 degree</span>
         <span class="n">d</span> <span class="o">*=</span> <span class="mf">111.</span>
@@ -252,6 +260,13 @@ div#notebook {
 </li>
 </ul>
 <p>Can you explain your findings from above?</p>
+<h4 id="Bonus">Bonus<a class="anchor-link" href="#Bonus">&#182;</a></h4><p>The avenues of Manhattan are at an angle of 29° from true North (<a href="http://www.charlespetzold.com/blog/2006/07/031016.html">source</a>). Update your Manhattan distance function to account from this.</p>
+<h4 id="Double-Bonus">Double Bonus<a class="anchor-link" href="#Double-Bonus">&#182;</a></h4><p>In Python, the standard way to handle errors is to raise an <a href="https://docs.python.org/3/tutorial/errors.html#raising-exceptions">exception</a>. Modify your functions to raise a <code>ValueError</code> if the value for <code>units</code> is not understood.</p>
+<h4 id="Triple-Bonus">Triple Bonus<a class="anchor-link" href="#Triple-Bonus">&#182;</a></h4><p><strong><em>WARNING:</em></strong> This is really above and beyond anything we've covered!</p>
+<p>Use the <a href="https://pythonhosted.org/quantities/user/tutorial.html"><code>quantities</code></a> module to convert distances into any distance unit the user specifies.</p>
+<p>The <code>quantities</code> module does not come with Anaconda, and will need to be installed separately. To install it, go to the terminal and run this command:</p>
+<p><code>pip install quantities</code></p>
+<p>After that, <code>import quantities</code></p>
 
 </div>
 </div>
