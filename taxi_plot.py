@@ -31,4 +31,4 @@ plt.xlim(long_lo, long_hi)
 plt.ylim(lat_lo, lat_hi)
 
 # Added this line, so we can save the plot!
-plt.savefig('taxi_rides.png', dpi=200)
+plt.savefig('data/taxi_rides.png', dpi=200)

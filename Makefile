@@ -9,6 +9,7 @@ all: pages/index.html \
 	pages/Problems-003.html \
 	pages/Problems-004.html \
 	pages/Problems-005.html \
+	pages/Problems-006.html \
 	pages/Reference.html \
 	pages/Answers-003.html \
 	pages/Answers-004.html \
@@ -17,6 +18,8 @@ all: pages/index.html \
 	pages/002-Basic_Python_actual.html \
 	pages/003-Control_Structures.html \
 	pages/005-objects.html \
+	pages/006-modules.html \
+	pages/006-modules_actual.html \
 	pages/custom.css \
 	pages/CNAME \
 	images
