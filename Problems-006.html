@@ -250,7 +250,10 @@ div#notebook {
 
     <span class="k">return</span> <span class="n">d</span>
 </pre></div>
-<p>1) Create the columns <code>data.euclid_dist</code> and <code>data.manhattan_dist</code> by applying the above defined functions to your dropoff/pickup data</p>
+<p>1) Create the columns <code>data.euclid_dist</code> and <code>data.manhattan_dist</code> by applying the above defined functions to your dropoff/pickup data.</p>
+<ul>
+<li><em>Note:</em> <code>data.trip_distance</code> is a "shortcut" for accessing the column <code>data['trip_distance']</code>. To <em>create</em> it, you can't use that shortcut to create a column; you will need to use the notation <code>data['euclid_dist'] = …</code>.</li>
+</ul>
 <p>2) Histogram all three distance columns <code>data.trip_distance, data.euclid_dist, data.manhattan_dist</code>. Choose appropriate bins like in class (exclude trips over 100 miles or a distance of your liking). Can you tell a difference between the three distributions? What are their mean and median distances?</p>
 <p>3) Let's compare the two distance functions to the taxi-logged distance.</p>
 <ul>
